@@ -474,9 +474,11 @@ class Shader
 
 		if (__context != null && program == null)
 		{
-			var gl = __context.gl;
-
-			var prefix = "#ifdef GL_ES
+			var gl = __context.gl; 
+			
+                        var prefix = "#version 120"; 
+			
+			prefix += "#ifdef GL_ES
 				"
 				+ (precisionHint == FULL ? "#ifdef GL_FRAGMENT_PRECISION_HIGH
 				precision highp float;
